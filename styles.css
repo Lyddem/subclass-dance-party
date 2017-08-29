@@ -20,8 +20,9 @@ body, a:link, a:visited, a:active{
 .title{
   background-color: #777;
 }
+/* automate with a sin wave the size and the color RGB */
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
+  border:10px solid blue;
+  border-radius: 10px;
   position:absolute;
 }
