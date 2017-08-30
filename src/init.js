@@ -1,6 +1,6 @@
   $(document).ready(function() {
   window.dancers = [];
-  // window.urls = ['https://media.giphy.com/media/fJW48ptgclF28/giphy.gif', 'https://media.giphy.com/media/Zn7rsVqBTPAly/giphy.gif']
+  window.urls = ['https://media.giphy.com/media/fJW48ptgclF28/giphy.gif', 'https://media.giphy.com/media/Zn7rsVqBTPAly/giphy.gif']
 
 
   $('.addDancerButton').on('click', function(event) {
@@ -32,22 +32,26 @@
     console.log(dancers);
     $('body').append(dancer.$node);
 
-    $('.dancer').on('mouseover', function() {
-        $('.dancer').css('border-color', 'orange');
+    $('img').on('mouseover', function() {
+        $('.dancer').$node.animate({top:0, left:this.left}, 2000);
     })
   });
 });
-    $('.lineup').on('click', function (event) {
-      for ( var i = 0; i < window.dancers.length; i++ ){
-        window.dancers[i].$node.css('top', '4');
-      }
-    });
 
-  // $('.changeBackground').on('click', function (event) {
-  //     for ( var i = 0; i < window.urls.length; i++ ){
-  //       $('body').css('background', url(window.urls[i]));
-  //     }
-  //   });
+  $('.lineup').on('click', function (event) {
+    for ( var i = 0; i < window.dancers.length; i++ ){
+      window.dancers[i].$node.css('top', '420px');
+    }
+  });
+
+  $('.footer').on('click', function (event) {
+      for ( var i = 0; i < window.urls.length; i++ ){
+        $('html').css('background', "url(" + window.urls[i] + ")");
+          }
+      });
+
+  //url( "" + window.urls[i] )
+
 
 
 

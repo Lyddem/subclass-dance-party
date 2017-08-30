@@ -37,3 +37,9 @@ makeDancer.prototype.setPosition = function(top, left) {
   };
   this.$node.css(styleSettings);
 };
+
+makeDancer.prototype.spin = function(){
+
+  this.$node.animate({top:0,left:this.left}, 2000);
+
+};
