@@ -1,5 +1,6 @@
-$(document).ready(function() {
+  $(document).ready(function() {
   window.dancers = [];
+  // window.urls = ['https://media.giphy.com/media/fJW48ptgclF28/giphy.gif', 'https://media.giphy.com/media/Zn7rsVqBTPAly/giphy.gif']
 
 
   $('.addDancerButton').on('click', function(event) {
@@ -22,15 +23,36 @@ $(document).ready(function() {
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
     // make a dancer with a random position
-
     var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
     window.dancers.push(dancer);
+    console.log(dancers);
     $('body').append(dancer.$node);
+
+    $('.dancer').on('mouseover', function() {
+        $('.dancer').css('border-color', 'orange');
+    })
   });
-
-
 });
+    $('.lineup').on('click', function (event) {
+      for ( var i = 0; i < window.dancers.length; i++ ){
+        window.dancers[i].$node.css('top', '4');
+      }
+    });
+
+  // $('.changeBackground').on('click', function (event) {
+  //     for ( var i = 0; i < window.urls.length; i++ ){
+  //       $('body').css('background', url(window.urls[i]));
+  //     }
+  //   });
+
+
+
+
+
+
+
+
